@@ -3,7 +3,7 @@
         <field name="name">Pe AI Telegram - Poll</field>
         <field name="model_id" ref="model_pe_ai_telegram_config"/>
         <field name="state">code</field>
-        <field name="code">model.search([('active','=',True),('polling_enabled','=',True)], limit=1).process_updates()</field>
+        <field name="code">config = model.search([('active','=',True),('polling_enabled','=',True)], limit=1); config and config.process_updates()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">minutes</field>
         <field name="active">True</field>
