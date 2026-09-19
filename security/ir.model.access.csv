@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pe_ai_telegram_config_user,pe.ai.telegram.config user,model_pe_ai_telegram_config,base.group_user,1,1,1,1

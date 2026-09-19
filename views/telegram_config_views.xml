@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_pe_ai_telegram_config_tree" model="ir.ui.view">
+        <field name="name">pe.ai.telegram.config.tree</field>
+        <field name="model">pe.ai.telegram.config</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active"/>
+                <field name="owner_chat_id"/>
+                <field name="polling_enabled"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_pe_ai_telegram_config_form" model="ir.ui.view">
+        <field name="name">pe.ai.telegram.config.form</field>
+        <field name="model">pe.ai.telegram.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test_connection" type="object" string="Test Connection" class="btn-primary"/>
+                    <button name="action_detect_owner" type="object" string="Detect My Chat ID"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="bot_token" password="True"/>
+                        <field name="owner_chat_id"/>
+                        <field name="polling_enabled"/>
+                        <field name="last_update_id" readonly="1"/>
+                    </group>
+                    <div class="alert alert-info" role="alert">
+                        MVP này dùng Telegram getUpdates polling mỗi phút để test nhanh. Sau khi luồng AI ổn định có thể chuyển sang webhook.
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pe_ai_telegram_config" model="ir.actions.act_window">
+        <field name="name">Telegram</field>
+        <field name="res_model">pe.ai.telegram.config</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

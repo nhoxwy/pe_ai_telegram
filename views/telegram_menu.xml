@@ -1,0 +1,3 @@
+<odoo>
+    <menuitem id="menu_pe_ai_telegram" name="Telegram" parent="pe_ai_core.menu_pe_ai_root" action="action_pe_ai_telegram_config" sequence="30"/>
+</odoo>
